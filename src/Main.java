@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,6 +9,7 @@ public class Main {
          *  Creating a var
          */
         int var1 = 1;
+        int var2 = 2;
 
 
         /**
@@ -41,15 +44,51 @@ public class Main {
 
 
         /**
+         * Conditions
+         */
+        // Filling the var with random value
+        var1 = new Random().nextInt(100);
+        var2 = new Random().nextInt(100);
+        var3 = new Random().nextInt(100);
+        var4 = new Random().nextInt(100);
+
+        if (var1 == var2) {
+            System.out.println("var1 and var2 have the same values");
+        } else {
+            System.out.println("var1 and var2 have different values");
+        }
+
+        if (var1 == var2) {}    // equality
+        if (var1 != var2) {}    // difference
+        if (var1 < var2) {}     // smaller than
+        if (var1 > var2) {}     // bigger than
+        if (var1 <= var2) {}    // smaller of equal
+        if (var1 >= var2) {}    // bigger of equal
+
+        if (var1 < var2 && var3 == var4) {
+            System.out.println("var1 smaller than var2 and var3 equal to var4");
+        }
+        if (var1 != var2 || var3 >= var4) {
+            System.out.println("var1 different than var2 or var3 bigger of equal to var4");
+        }
+
+
+        /**
          * Using a function
          */
-        int var2 = addTwo(var1);
+        var2 = addTwo(var1);
     }
 
-    public static int addTwo(int number) {
+    public static int addTwo(int number) {  // input(s)
+        // Begin work
         int result = number + 2;
-        return result;
+
+        // End work
+
+        return result;  // output
     }
+
+
 
 
     /**
