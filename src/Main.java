@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.*;
 
 
 public class Main {
@@ -6,6 +6,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
+    }
+
+    /**
+     * You can find here all the basics of java
+     */
+    public static void b_a_ba() {
         /**
          *  Creating a var
          */
@@ -82,20 +88,11 @@ public class Main {
         var2 = addTwo(var1);
         var2 = multiplyTwoNumber(5, 10);
 
-
-
-        /**
-         * Using objects
-         */
-        // Person = The class "Person"
-        // amalric = The name of the object of type "Person"
-        // new Person(XX, XX, XX) = The constructor of the object (Must be used to instanciate an object)
-        Person amalric = new Person("Amalric", 20, true);
-
-        int ageInTenYears = amalric.getAgeInTenYears();
-        String gender = amalric.whatGender();
-
+        displayDeltaAndX1X2(-3, -4, 5);
     }
+
+
+
 
     /**
      * Function examples
@@ -122,19 +119,83 @@ public class Main {
 
     public static void displayDeltaAndX1X2(int a, int b, int c) { // input(s)
         // Begin work
-        double delta = b*b - ( 4 * a * c );
+        double delta = Math.pow(b, 2) - ( 4 * a * c );
 
         System.out.println("delta = " + delta);
 
-        double x1 = (- b - Math.sqrt(delta) ) / (2 * a);
-        double x2 = (- b + Math.sqrt(delta) ) / (2 * a);
-
-        System.out.println("X1 = " + x1 + " X2 = " + x2);
+        if (delta > 0) {
+            double x1 = (- b - Math.sqrt(delta) ) / (2 * a);
+            double x2 = (- b + Math.sqrt(delta) ) / (2 * a);
+            System.out.println("X1 = " + x1 + " X2 = " + x2);
+        } else if (delta == 0) {
+            double x1 = (- b) / (2 * a);
+            System.out.println("x1 = " + x1);
+        } else {
+            System.out.println("There is no real solution");
+        }
 
         // End work
 
         // There is no return statement, this is a void function !
 
+    }
+
+
+
+
+
+    /**
+     * Using objects
+     */
+    public static void usingObjects() {
+        // Person = The class "Person"
+        // amalric = The name of the object of type "Person"
+        // new Person(XX, XX, XX) = The constructor of the object (Must be used to instanciate an object)
+        Person amalric = new Person("Amalric", 20, true);
+
+        int ageInTenYears = amalric.getAgeInTenYears();
+        String gender = amalric.whatGender();
+
+    }
+
+
+    /**
+     * Using Tables
+     */
+    public static void usingTables() {
+        int listSize = 5;
+        int intTable[] = new int[listSize];
+
+        for (int it = 0; it < listSize; it++) {
+            intTable[it] = it;
+        }
+
+        for (int it = 0; it < listSize; it++) {
+            System.out.print(intTable[it] + " ");
+        }
+    }
+
+    /**
+     * Using List
+     */
+    public static void usingList() {
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Person());
+        Person somebody = personList.get(0);
+
+    }
+
+
+    /**
+     * Using Maps
+     */
+    public static void usingMap() {
+        Map<String, Person> userList = new HashMap<>();
+        userList.put("Bob", new Person("Bob", 42, true));
+        userList.put("Alice", new Person("Alice", 76, false));
+
+        Person bob = userList.get("Bob");
+        Person alice = userList.get("Alice");
     }
 
 
