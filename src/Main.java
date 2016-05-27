@@ -1,5 +1,6 @@
 import java.util.Random;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -51,6 +52,8 @@ public class Main {
         var2 = new Random().nextInt(100);
         var3 = new Random().nextInt(100);
         var4 = new Random().nextInt(100);
+        // Finished filling vars
+
 
         if (var1 == var2) {
             System.out.println("var1 and var2 have the same values");
@@ -77,8 +80,26 @@ public class Main {
          * Using a function
          */
         var2 = addTwo(var1);
+        var2 = multiplyTwoNumber(5, 10);
+
+
+
+        /**
+         * Using objects
+         */
+        // Person = The class "Person"
+        // amalric = The name of the object of type "Person"
+        // new Person(XX, XX, XX) = The constructor of the object (Must be used to instanciate an object)
+        Person amalric = new Person("Amalric", 20, true);
+
+        int ageInTenYears = amalric.getAgeInTenYears();
+        String gender = amalric.whatGender();
+
     }
 
+    /**
+     * Function examples
+     */
     public static int addTwo(int number) {  // input(s)
         // Begin work
         int result = number + 2;
@@ -88,12 +109,37 @@ public class Main {
         return result;  // output
     }
 
+    public static int multiplyTwoNumber(int number1, int number2) { // input(s)
+        // Begin work
+        System.out.println("Multiplying " + number1 + " and " + number2);
+
+        int result = number1 * number2;
+        // End work
+
+
+        return result;  // output
+    }
+
+    public static void displayDeltaAndX1X2(int a, int b, int c) { // input(s)
+        // Begin work
+        double delta = b*b - ( 4 * a * c );
+
+        System.out.println("delta = " + delta);
+
+        double x1 = (- b - Math.sqrt(delta) ) / (2 * a);
+        double x2 = (- b + Math.sqrt(delta) ) / (2 * a);
+
+        System.out.println("X1 = " + x1 + " X2 = " + x2);
+
+        // End work
+
+        // There is no return statement, this is a void function !
+
+    }
 
 
 
-    /**
-     * Using Objects
-     */
+
 
 
 
