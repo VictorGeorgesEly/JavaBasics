@@ -200,7 +200,15 @@ public class Main {
 
 
 
-
+    private Map<String, List<Person>> listToMap(List<Person> list){
+        //List<Person> list = new ArrayList<>();
+        Map<String, List<Person>> map = new HashMap<>();
+        for (Person person : list){
+            map.computeIfAbsent(person.getName(), k -> new ArrayList<>());
+            map.get(person.getName()).add(person);
+        }
+        return map;
+    }
 
 
 
